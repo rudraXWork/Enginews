@@ -1,6 +1,6 @@
 .env
-model.pkl
-vectorizer.pkl
+# model.pkl
+# vectorizer.pkl
 
 *.csv
 
