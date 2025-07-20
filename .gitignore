@@ -1,0 +1,10 @@
+.env
+model.pkl
+vectorizer.pkl
+
+*.csv
+
+
+__pycache__/
+*.pyc
+

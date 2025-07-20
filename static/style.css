@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #0c1014;
+    --secondary-text-color: #6c757d;
+    --accent-color: #6c757d;
+    --accent-color-dark: #53c6ef;
+}
+
+body {
+    color: var(--primary-text-color);
+    font-family: 'Poppins', sans-serif;
+    background-color: #a1a09d;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+p {
+    color: var(--secondary-text-color);
+    line-height: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    font-weight: bold;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+nav {
+    background-color: #decf82;
+    box-shadow: 0 0 4px #bbd0e2;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    right: 0;
+    padding: 5px 0;
+}
+
+.main-nav {
+    justify-content: space-between;
+    padding-block: 8px;
+    position: relative;
+}
+
+.logo img {
+    width: 120px;
+}
+
+.nav-links ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links ul li {
+    margin-right: 12px;
+}
+
+.hover-link {
+    cursor: pointer;
+}
+
+.hover-link:hover {
+    color: var(--accent-color);
+}
+
+.hover-link:active {
+    color: var(--accent-color-dark);
+}
+
+.active {
+    color: var(--accent-color-dark);
+    font-weight: bold;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.search-bar {
+    height: 32px;
+    gap: 8px;
+}
+
+.news-input {
+    width: 200%;
+    height: 100%;
+    padding-inline: 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-btn:hover {
+    background-color: var(--accent-color-dark);
+}
+
+main {
+    margin-top: 100px;
+    padding-block: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    row-gap: 20px;
+}
+
+.card {
+    width: 360px;
+    min-height: 400px;
+    box-shadow: 0 0 4px #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: white;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 8px #ccc;
+    background-color: rgb(236, 226, 180);
+    transform: translateY(-5px);
+}
+
+.card-header img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.news-source {
+    margin-block: 12px;
+}
+
+
+
+/* Tablet and smaller screens */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .main-nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 0;
+    }
+    
+    .nav-links ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-links ul li {
+        margin-right: 8px;
+        font-size: 14px;
+    }
+    
+    .search-bar {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .news-input {
+        width: 200px;
+        font-size: 14px;
+    }
+    
+    .search-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    main {
+        margin-top: 140px;
+    }
+    
+    .card-container {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .logo img {
+        width: 100px;
+    }
+    
+    .main-nav {
+        padding: 10px 0;
+    }
+    
+    .nav-links ul {
+        gap: 10px;
+        font-size: 12px;
+    }
+    
+    .nav-links ul li {
+        margin-right: 5px;
+    }
+    
+    .search-bar {
+        height: 36px;
+        max-width: 250px;
+    }
+    
+    .news-input {
+        width: 150px;
+        font-size: 12px;
+        padding-inline: 8px;
+    }
+    
+    .search-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    main {
+        margin-top: 160px;
+        padding-block: 15px;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 100%;
+        min-height: 350px;
+    }
+    
+    .card-header img {
+        height: 180px;
+    }
+    
+    .card-content {
+        padding: 12px;
+    }
+    
+    .card-content h3 {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+    
+    .news-source {
+        font-size: 12px;
+        margin-block: 8px;
+    }
+    
+    .news-desc {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+    .logo img {
+        width: 80px;
+    }
+    
+    .nav-links ul {
+        gap: 8px;
+        font-size: 11px;
+    }
+    
+    .search-bar {
+        max-width: 200px;
+    }
+    
+    .news-input {
+        width: 120px;
+        font-size: 11px;
+    }
+    
+    .search-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    
+    main {
+        margin-top: 170px;
+    }
+    
+    .card-content h3 {
+        font-size: 14px;
+    }
+    
+    .news-source {
+        font-size: 11px;
+    }
+    
+    .news-desc {
+        font-size: 12px;
+    }
+}
+
+/* Landscape orientation for mobile phones */
+@media (max-width: 768px) and (orientation: landscape) {
+    .main-nav {
+        flex-direction: row;
+        padding: 8px 0;
+    }
+    
+    .nav-links ul {
+        gap: 12px;
+    }
+    
+    .nav-links ul li {
+        font-size: 13px;
+    }
+    
+    main {
+        margin-top: 80px;
+    }
+    
+    .card-container {
+        justify-content: space-around;
+    }
+    
+    .card {
+        width: 45%;
+        max-width: 300px;
+    }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SpotFake - Fake News Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fake.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <nav>
+        <div class="main-nav container flex">
+            <a href="{{ url_for('home') }}" class="logo" onclick="reload()">
+                <img src="{{ url_for('static', filename='image.png') }}" alt="logo">
+            </a>
+            <div class="nav-links">
+                <ul class="flex">
+                    <li class="hover-link nav-items" onclick="window.location.href='{{ url_for('home') }}?category=Sports';">Sports</li>
+                    <li class="hover-link nav-items" onclick="window.location.href='{{ url_for('home') }}?category=Education';">Education</li>
+                    <li class="hover-link nav-items" onclick="window.location.href='{{ url_for('home') }}?category=Finance';">Finance</li>
+                    <li class="hover-link nav-items" onclick="window.location.href='{{ url_for('home') }}?category=Politics';">Politics</li>
+                    <li class="hover-link nav-items active" id="fakedetection">SpotFake</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="spotfake-container">
+        <h1>SpotFake - Fake News Detector</h1>
+        <textarea id="news-input" placeholder="Paste the news here..."></textarea>
+        <button id="check-news-btn">Check News</button>
+        <div id="result-box" class="hidden">
+            <h2 id="result-text">News Status</h2>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 

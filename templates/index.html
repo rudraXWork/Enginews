@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EngiNews </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <nav>
+        <div class="main-nav container flex">
+            <a href="#" class="logo" onclick="reload()">
+                <img src="{{ url_for('static', filename='image.png') }}" alt="logo">
+            </a>
+            <div class="nav-links">
+                <ul class="flex">
+                    <li class="hover-link nav-items" id="Sports" onclick="onNavItemclick('Sports')">Sports</li>
+                    <li class="hover-link nav-items" id="Education" onclick="onNavItemclick('Education')">Education</li>
+                    <li class="hover-link nav-items" id="Finance" onclick="onNavItemclick('Finance')">Finance</li>
+                    <li class="hover-link nav-items" id="Politics" onclick="onNavItemclick('Politics')">Politics</li>
+                    <li class="hover-link nav-items" id="fakedetection">SpotFake</li>
+                </ul>
+            </div>
+            <div class="search-bar flex">
+                <input id="text-search" type="text" class="news-input" placeholder="e.g. sports">
+                <button id="search-btn" class="search-btn">Search</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="card-container container flex" id="card-container"></div>
+    </main>
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://placehold.co/400x200" alt="image" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">News Title</h3>
+                <h6 class="news-source" id="news-source">Author</h6>
+                <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </template>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
